@@ -1,5 +1,5 @@
 # app
-vendor/app/SensorHub/SensorHub.apk
+-vendor/app/SensorHub/SensorHub.apk;PRESIGNED
 vendor/app/SensorHub/oat/arm64/SensorHub.odex
 vendor/app/SensorHub/oat/arm64/SensorHub.vdex
 vendor/app/mcRegistry/020f0000000000000000000000000000.drbin
@@ -5228,16 +5228,16 @@ vendor/oppo/recovery_rootcheck
 # oppoex
 vendor/oppoex/ld.config.oppo.txt
 # overlay
-vendor/overlay/BlackListAppResCommon.apk
-vendor/overlay/BreenoResCommon.apk
-vendor/overlay/ColorDirectServiceResCommon.apk
-vendor/overlay/ColorFavoriteResCommon.apk
-vendor/overlay/FrameworkResOverlay/FrameworkResOverlay.apk
-vendor/overlay/OppoPhoneActivationResCommon.apk
-vendor/overlay/PromeResCommon.apk
-vendor/overlay/SceneServiceResCommon.apk
-vendor/overlay/SystemUIResOverlay/SystemUIResOverlay.apk
-vendor/overlay/framework-res__auto_generated_rro_vendor.apk
+-vendor/overlay/BlackListAppResCommon.apk;PRESIGNED
+-vendor/overlay/BreenoResCommon.apk;PRESIGNED
+-vendor/overlay/ColorDirectServiceResCommon.apk;PRESIGNED
+-vendor/overlay/ColorFavoriteResCommon.apk;PRESIGNED
+-vendor/overlay/FrameworkResOverlay/FrameworkResOverlay.apk;PRESIGNED
+-vendor/overlay/OppoPhoneActivationResCommon.apk;PRESIGNED
+-vendor/overlay/PromeResCommon.apk;PRESIGNED
+-vendor/overlay/SceneServiceResCommon.apk;PRESIGNED
+-vendor/overlay/SystemUIResOverlay/SystemUIResOverlay.apk;PRESIGNED
+-vendor/overlay/framework-res__auto_generated_rro_vendor.apk;PRESIGNED
 # res
 vendor/res/images/lcd_test_00.png
 vendor/res/images/lcd_test_01.png
