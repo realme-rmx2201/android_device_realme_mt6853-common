@@ -168,7 +168,7 @@
             <name>IKeymasterDevice</name>
             <instance>default</instance>
         </interface>
-        <fqname>@3.0::IKeymasterDevice/default</fqname>
+        <fqname>@4.0::IKeymasterDevice/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.light</name>
@@ -208,14 +208,14 @@
     <hal format="hidl">
         <name>android.hardware.neuralnetworks</name>
         <transport>hwbinder</transport>
-        <version>1.1</version>
+        <version>1.2</version>
         <interface>
             <name>IDevice</name>
             <instance>gpunn</instance>
             <instance>neuron-ann</instance>
         </interface>
-        <fqname>@1.1::IDevice/gpunn</fqname>
-        <fqname>@1.1::IDevice/neuron-ann</fqname>
+        <fqname>@1.2::IDevice/gpunn</fqname>
+        <fqname>@1.2::IDevice/neuron-ann</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.power</name>
@@ -289,12 +289,12 @@
     <hal format="hidl">
         <name>android.hardware.sensors</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>2.0</version>
         <interface>
             <name>ISensors</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::ISensors/default</fqname>
+        <fqname>@2.0::ISensors/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.soundtrigger</name>
