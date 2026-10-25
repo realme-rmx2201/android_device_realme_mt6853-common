@@ -119,6 +119,7 @@ BOARD_SUPER_PARTITION_GROUPS := main
 BOARD_MAIN_SIZE := 8128561152
 # Keep ColorOS-only logical partitions. The LOS update owns only system/vendor.
 BOARD_MAIN_PARTITION_LIST := system vendor
+BOARD_PRESERVE_DYNAMIC_PARTITIONS := true
 TARGET_COPY_OUT_PRODUCT := system/product
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_ODM := vendor/odm
