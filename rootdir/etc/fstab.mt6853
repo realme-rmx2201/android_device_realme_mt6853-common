@@ -4,8 +4,8 @@
 
 #<src>                                           <mnt_point>  <type>  <mnt_flags and options>                             <fs_mgr_flags>
 # Core Partitions
-/dev/block/platform/bootdevice/by-name/system     /system     ext4     ro                                                 wait,first_stage_mount
-/dev/block/platform/bootdevice/by-name/vendor     /vendor     ext4     ro                                                 wait,first_stage_mount
+/dev/block/platform/bootdevice/by-name/system     /system     ext4     ro                                                 wait,first_stage_mount,logical
+/dev/block/platform/bootdevice/by-name/vendor     /vendor     ext4     ro                                                 wait,first_stage_mount,logical
 /dev/block/platform/bootdevice/by-name/userdata   /data       ext4     noatime,nosuid,nodev,noauto_da_alloc,errors=panic  latemount,wait,check,formattable,quota,reservedsize=128m,fileencryption=aes-256-xts
 /dev/block/platform/bootdevice/by-name/cache      /cache      ext4     noatime,nosuid,nodev,noauto_da_alloc,discard       wait,check,formattable
 /dev/block/platform/bootdevice/by-name/recovery   /recovery   emmc     defaults     first_stage_mount,nofail
@@ -13,6 +13,8 @@
 /dev/block/platform/bootdevice/by-name/misc       /misc       emmc     defaults     defaults
 /dev/block/platform/bootdevice/by-name/audio_dsp  /audio_dsp  emmc     defaults     defaults
 /dev/block/platform/bootdevice/by-name/persist    /mnt/vendor/persist  ext4    noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc     wait,check,formattable
+
+/dev/block/platform/bootdevice/by-name/metadata /metadata ext4 noatime,nosuid,nodev wait,check,formattable,first_stage_mount
 
 # External-Devices (SDCARD | OTG)
 /devices/platform/externdevice*                  auto       auto   defaults    voldmanaged=sdcard1:auto,encryptable=userdata
@@ -32,7 +34,6 @@
 
 # Modem
 /dev/block/platform/bootdevice/by-name/md1img   /md1img     emmc   defaults    defaults
-/dev/block/platform/bootdevice/by-name/md1dsp   /md1dsp     emmc   defaults    defaults
 
 # Non-Volatile (RAM | DATA | CFG)
 /dev/block/platform/bootdevice/by-name/nvram    /nvram      emmc   defaults    defaults

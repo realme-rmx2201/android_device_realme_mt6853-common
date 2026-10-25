@@ -19,12 +19,10 @@ import common
 
 def FullOTA_InstallEnd(info):
     OTA_InstallEnd(info, False)
-    Firmware_Images(info, False)
 
 
 def IncrementalOTA_InstallEnd(info):
     OTA_InstallEnd(info, True)
-    Firmware_Images(info, True)
 
 
 def AddImage(info, basename, dest, incremental, firmware):

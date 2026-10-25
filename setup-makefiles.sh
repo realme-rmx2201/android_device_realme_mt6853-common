@@ -19,6 +19,7 @@
 set -e
 
 DEVICE_COMMON=mt6853-common
+DEVICE=${DEVICE:-mt6853-common}
 VENDOR=realme
 
 INITIAL_COPYRIGHT_YEAR=2019

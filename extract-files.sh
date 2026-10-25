@@ -19,6 +19,7 @@
 set -e
 
 DEVICE_COMMON=mt6853-common
+DEVICE=${DEVICE:-rmx2201}
 VENDOR=realme
 
 # Load extract_utils and do some sanity checks
