@@ -1,2 +1,134 @@
 soong_namespace {
 }
+android_app_import {
+    name: "SensorHub",
+    owner: "realme",
+    apk: "proprietary/vendor/app/SensorHub/SensorHub.apk",
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    soc_specific: true,
+    install_path: "vendor/app/SensorHub/SensorHub.apk",
+}
+
+android_app_import {
+    name: "BlackListAppResCommon",
+    owner: "realme",
+    apk: "proprietary/vendor/overlay/BlackListAppResCommon.apk",
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    soc_specific: true,
+    install_path: "vendor/overlay/BlackListAppResCommon.apk",
+}
+
+android_app_import {
+    name: "BreenoResCommon",
+    owner: "realme",
+    apk: "proprietary/vendor/overlay/BreenoResCommon.apk",
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    soc_specific: true,
+    install_path: "vendor/overlay/BreenoResCommon.apk",
+}
+
+android_app_import {
+    name: "ColorDirectServiceResCommon",
+    owner: "realme",
+    apk: "proprietary/vendor/overlay/ColorDirectServiceResCommon.apk",
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    soc_specific: true,
+    install_path: "vendor/overlay/ColorDirectServiceResCommon.apk",
+}
+
+android_app_import {
+    name: "ColorFavoriteResCommon",
+    owner: "realme",
+    apk: "proprietary/vendor/overlay/ColorFavoriteResCommon.apk",
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    soc_specific: true,
+    install_path: "vendor/overlay/ColorFavoriteResCommon.apk",
+}
+
+android_app_import {
+    name: "FrameworkResOverlay",
+    owner: "realme",
+    apk: "proprietary/vendor/overlay/FrameworkResOverlay/FrameworkResOverlay.apk",
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    soc_specific: true,
+    install_path: "vendor/overlay/FrameworkResOverlay/FrameworkResOverlay.apk",
+}
+
+android_app_import {
+    name: "OppoPhoneActivationResCommon",
+    owner: "realme",
+    apk: "proprietary/vendor/overlay/OppoPhoneActivationResCommon.apk",
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    soc_specific: true,
+    install_path: "vendor/overlay/OppoPhoneActivationResCommon.apk",
+}
+
+android_app_import {
+    name: "PromeResCommon",
+    owner: "realme",
+    apk: "proprietary/vendor/overlay/PromeResCommon.apk",
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    soc_specific: true,
+    install_path: "vendor/overlay/PromeResCommon.apk",
+}
+
+android_app_import {
+    name: "SceneServiceResCommon",
+    owner: "realme",
+    apk: "proprietary/vendor/overlay/SceneServiceResCommon.apk",
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    soc_specific: true,
+    install_path: "vendor/overlay/SceneServiceResCommon.apk",
+}
+
+android_app_import {
+    name: "SystemUIResOverlay",
+    owner: "realme",
+    apk: "proprietary/vendor/overlay/SystemUIResOverlay/SystemUIResOverlay.apk",
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    soc_specific: true,
+    install_path: "vendor/overlay/SystemUIResOverlay/SystemUIResOverlay.apk",
+}
+
+android_app_import {
+    name: "framework-res__auto_generated_rro_vendor",
+    owner: "realme",
+    apk: "proprietary/vendor/overlay/framework-res__auto_generated_rro_vendor.apk",
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    soc_specific: true,
+    install_path: "vendor/overlay/framework-res__auto_generated_rro_vendor.apk",
+}
+

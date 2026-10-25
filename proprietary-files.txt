@@ -181,20 +181,20 @@ vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
 vendor/bin/wpa_cli
 # root
-vendor/build.prop
-vendor/default.prop
+# Build-generated file, not a vendor blob: vendor/build.prop
+# Build-generated file, not a vendor blob: vendor/default.prop
 vendor/euclid_build.prop
 vendor/recovery-from-boot.p
 vendor/ro.prop
 vendor/rw.prop
-vendor/ueventd.rc
+# Build-generated file, not a vendor blob: vendor/ueventd.rc
 # data
 vendor/data/misc/ProjectConfig.mk
 # etc
 vendor/etc/DRIVER.ISO
 vendor/etc/FV-SAM-MTK2.dat
 vendor/etc/MNL_Config.xml
-vendor/etc/NOTICE.xml.gz
+# Build-generated file, not a vendor blob: vendor/etc/NOTICE.xml.gz
 vendor/etc/a2dp_audio_policy_configuration.xml
 vendor/etc/a2dp_in_audio_policy_configuration.xml
 vendor/etc/aee-config
