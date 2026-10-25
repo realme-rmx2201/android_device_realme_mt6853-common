@@ -1,0 +1,14 @@
+[
+  {
+    "repository" : "android_hardware_mediatek",
+    "target_path": "hardware/mediatek"
+  },
+  {
+    "repository" : "android_device_mediatek_sepolicy",
+    "target_path": "device/mediatek/sepolicy"
+  },
+  {
+    "repository" : "android_kernel_realme_rmx2201",
+    "target_path": "kernel/realme/rmx2201"
+  }
+]
