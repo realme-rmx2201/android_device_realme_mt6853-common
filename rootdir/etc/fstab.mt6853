@@ -14,7 +14,7 @@
 /dev/block/platform/bootdevice/by-name/audio_dsp  /audio_dsp  emmc     defaults     defaults
 /dev/block/platform/bootdevice/by-name/persist    /mnt/vendor/persist  ext4    noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc     wait,check,formattable
 
-/dev/block/platform/bootdevice/by-name/metadata /metadata ext4 noatime,nosuid,nodev wait,check,formattable,first_stage_mount
+/dev/block/platform/bootdevice/by-name/md_udc /metadata ext4 noatime,nosuid,nodev wait,check,formattable,first_stage_mount
 
 # External-Devices (SDCARD | OTG)
 /devices/platform/externdevice*                  auto       auto   defaults    voldmanaged=sdcard1:auto,encryptable=userdata
