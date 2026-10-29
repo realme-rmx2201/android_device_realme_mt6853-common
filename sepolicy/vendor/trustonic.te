@@ -1,0 +1,54 @@
+init_daemon_domain(mobicore)
+init_daemon_domain(hal_tee_default)
+init_daemon_domain(hal_teeregistry_default)
+
+allow mobicore mobicore_admin_device:chr_file rw_file_perms;
+allow mobicore mobicore_user_device:chr_file rw_file_perms;
+allow mobicore mobicore_tui_device:chr_file { ioctl read open };
+allow mobicore mobicore_data_file:dir create_dir_perms;
+allow mobicore mobicore_data_file:file create_file_perms;
+allow mobicore mnt_vendor_file:dir search;
+allow mobicore persist_data_file:dir { read write getattr add_name search open };
+allow mobicore persist_data_file:file { read write create getattr open };
+allow hal_keymaster_attestation mobicore:unix_stream_socket connectto;
+allow hal_keymaster_attestation mobicore_user_device:chr_file { ioctl read write open };
+allow hal_gatekeeper_default mobicore:unix_stream_socket { read write connectto };
+allow hal_gatekeeper_default mobicore_user_device:chr_file { ioctl read write open };
+allow hal_keymaster_default mobicore:unix_stream_socket { read write connectto };
+allow hal_keymaster_default mobicore_user_device:chr_file rw_file_perms;
+
+attribute hal_tee;
+attribute hal_tee_server;
+attribute hal_tee_client;
+attribute hal_tee_hwservice;
+attribute hal_teeregistry;
+attribute hal_teeregistry_server;
+attribute hal_teeregistry_client;
+attribute hal_teeregistry_hwservice;
+
+hal_server_domain(hal_tee_default, hal_tee)
+hal_server_domain(hal_teeregistry_default, hal_teeregistry)
+hal_client_domain(hal_tee_default, hal_tee)
+hal_client_domain(hal_teeregistry_default, hal_teeregistry)
+allow hal_tee_default mobicore_user_device:chr_file rw_file_perms;
+allow hal_tee_default mobicore_tui_device:chr_file rw_file_perms;
+allow hal_teeregistry_default mobicore_user_device:chr_file rw_file_perms;
+allow hal_teeregistry_default mobicore_admin_device:chr_file rw_file_perms;
+allow hal_teeregistry_default mobicore_data_file:dir create_dir_perms;
+allow hal_teeregistry_default mobicore_data_file:file create_file_perms;
+allow hal_teeregistry_default mobicore_vendor_file:file { ioctl read getattr lock map open };
+
+# Temporary boot diagnostics for the failing HAL and graphics service.
+allow hal_gatekeeper_default metadata_file:dir { search add_name write };
+allow hal_gatekeeper_default metadata_file:file { create write append open };
+allow surfaceflinger metadata_file:dir { search add_name write };
+allow surfaceflinger metadata_file:file { create write append open };
+allow tombstoned metadata_file:dir { search write add_name remove_name };
+allow tombstoned metadata_file:file { create read write append open unlink link getattr };
+allow crash_dump metadata_file:file { write append open };
+allow vold metadata_file:dir { search add_name write };
+allow vold metadata_file:file { create write append open };
+allow vdc metadata_file:dir { search add_name write };
+allow vdc metadata_file:file { create write append open };
+allow apexd metadata_file:dir { search add_name write };
+allow apexd metadata_file:file { create write append open };

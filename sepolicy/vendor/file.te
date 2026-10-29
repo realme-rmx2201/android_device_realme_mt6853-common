@@ -1,2 +1,14 @@
 type sysfs_light, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_graphics, sysfs_type, fs_type, mlstrustedobject;
+
+type mobicore, domain;
+type mobicore_exec, exec_type, vendor_file_type, file_type;
+type mobicore_admin_device, dev_type;
+type mobicore_user_device, dev_type;
+type mobicore_tui_device, dev_type;
+type mobicore_data_file, file_type, data_file_type;
+type mobicore_vendor_file, file_type, vendor_file_type;
+type hal_tee_default, domain, halserverdomain;
+type hal_tee_default_exec, exec_type, vendor_file_type, file_type;
+type hal_teeregistry_default, domain, halserverdomain;
+type hal_teeregistry_default_exec, exec_type, vendor_file_type, file_type;
