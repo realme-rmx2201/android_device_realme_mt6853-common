@@ -1,0 +1,9 @@
+# The AOSP rild links against the stock libril.so, which lacks initWithMmapSize,
+# so it can never start. The MTK RIL daemon (vendor.ril-daemon-mtk) does the work.
+# This file must sort after rild.rc so the override takes effect.
+service vendor.ril-daemon /vendor/bin/hw/rild
+    override
+    user radio
+    group radio
+    disabled
+    oneshot

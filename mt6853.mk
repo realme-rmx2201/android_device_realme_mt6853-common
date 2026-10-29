@@ -6,6 +6,9 @@
 #
 
 COMMON_PATH := device/realme/mt6853-common
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.apex.updatable=true
+PRODUCT_PACKAGES += gatekeeper.mt6853 gatekeeper.oppo6853
+include $(COMMON_PATH)/gatekeeper-links.mk
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
@@ -30,7 +33,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml \
     frameworks/native/data/etc/android.hardware.camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.xml \
-    frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml \
     frameworks/native/data/etc/android.hardware.faketouch.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.faketouch.xml \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml \
@@ -192,6 +194,7 @@ PRODUCT_PACKAGES += \
     init.mt6853.rc \
     init.mt6853.usb.rc \
     init.project.rc \
+    rmx2201.ril.rc \
     init.sensor_1_0.rc \
     meta_init.connectivity.rc \
     meta_init.modem.rc \
@@ -252,3 +255,29 @@ PRODUCT_COPY_FILES += \
 
 # Inherit vendor
 $(call inherit-product, vendor/realme/mt6853-common/mt6853-common-vendor.mk)
+
+# Bring-up: expose adb on first boot without waiting for the UI to enable it.
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=adb \
+    ro.adb.secure=0
+
+# Vendor init scripts are imported through ${ro.vendor.rc}; without these the
+# vendor USB gadget, connectivity, modem and sensor rc files are never loaded.
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.vendor.rc=/vendor/etc/init/hw/ \
+    ro.vendor.init.sensor.rc=init.sensor_2_0.rc \
+    ro.vendor.mtk_aod_support=1 \
+    ro.oem_unlock_supported=1 \
+    camera.disable_zsl_mode=1 \
+    ro.logd.kernel=false \
+    ro.oppo.oppo_custom_root=/my_custom \
+    ro.oppo.oppo_engineer_root=/oppo_engineering \
+    ro.oppo.oppo_product_root=/oppo_product \
+    ro.oppo.oppo_version_root=/oppo_version \
+    ro.oppo.oppo_special_preload_root=/special_preload \
+    ro.oppo.oppo_common_preload_root=/common_preload
+
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/sepolicy/odm_sepolicy.cil:$(TARGET_COPY_OUT_ODM)/etc/selinux/odm_sepolicy.cil
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/sepolicy/odm_hwservice_contexts:$(TARGET_COPY_OUT_ODM)/etc/selinux/odm_hwservice_contexts
